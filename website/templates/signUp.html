@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %} Registration Page {% endblock %} {%
+block content %}
+
+<form method="POST" class="modal center-object">
+  <div class="modal-header">
+    <p id="modal-title">Create your account</p>
+    <!-- <button class="close-modal">&#x279C;</button> -->
+  </div>
+
+  <div class="modal-body">
+    <label class="label">Full name:</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      id="nameInput"
+      placeholder="John Doe"
+      autofocus
+    />
+    <br />
+    <label class="label">Email address:</label>
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      id="emailInput"
+      placeholder="name@example.com"
+    />
+    <br />
+    <label class="label">Password:</label>
+    <div id="passwordDiv" class="input-group">
+      <input
+        type="password"
+        name="password"
+        id="passwordInput"
+        class="form-control"
+        placeholder="must be at least 6 characters"
+      />
+      <span class="input-group-text">
+        <span class="far fa-eye" id="togglePassword"></span>
+      </span>
+    </div>
+    <br />
+    <label class="label">Confirm password:</label>
+    <div id="confirmPasswordDiv" class="input-group">
+      <input
+        type="password"
+        name="confirm"
+        id="confirmPasswordInput"
+        class="form-control"
+        placeholder="Confirm password"
+      />
+      <span class="input-group-text">
+        <span class="far fa-eye" id="toggleConfirmPassword"></span>
+      </span>
+    </div>
+
+    <button type="submit" id="registerBtn" class="btn btn-primary btn-lg">
+      Register
+    </button>
+  </div>
+
+  <div class="modal-footer">
+    <p id="modal-title">Alredy register?</p>
+    <br />
+    <a class="btn btn-outline-secondary" id="loginLink" href="/login"
+      >Login now</a
+    >
+  </div>
+</form>
+<div class="overlay hidden"></div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %} Login Page {% endblock %} {% block
+content %}
+
+<form method="POST" class="modal center-object">
+  <div class="modal-header">
+    <p id="modal-title">Welcom back to our site</p>
+    <!-- <button class="close-modal">&times;</button> -->
+  </div>
+
+  <div class="modal-body">
+    <label class="label">Email address:</label>
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      id="emailInput"
+      placeholder="name@example.com"
+      autofocus
+    />
+    <br />
+    <label class="label">Password:</label>
+    <div id="passwordDiv" class="input-group">
+      <input
+        type="password"
+        name="password"
+        id="passwordInput"
+        class="form-control"
+        placeholder="must be at least 6 characters"
+      />
+      <span class="input-group-text">
+        <span class="far fa-eye" id="togglePassword"></span>
+      </span>
+    </div>
+
+    <button class="btn btn-primary btn-lg" id="loginBtn" type="submit">
+      Login
+    </button>
+  </div>
+
+  <div class="modal-footer">
+    <p id="modal-title">Not register yet?</p>
+    <br />
+    <a class="btn btn-outline-secondary" id="signUpLink" href="/sign-up"
+      >Sign Up now</a
+    >
+  </div>
+</form>
+<!-- <div class="overlay hidden"></div> -->
+
+{% endblock %}

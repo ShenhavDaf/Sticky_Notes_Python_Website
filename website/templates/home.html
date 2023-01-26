@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} Home Page {% endblock %} {% block
+content %}
+<div class="title">Welcome back, {{ user.name }}!</div>
+<form method="POST">
+  <textarea name="note_text" id="note" class="form-control"></textarea>
+  <br />
+  <div>
+    <button type="submit" class="btn btn-primary">Add new note</button>
+  </div>
+</form>
+<br />
+<ul class="list-group list-group-horizontal" id="notes">
+  {% for note in user.notes %}
+  <li>
+    <a>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><b>Note #{{ note.id }}</b></h5>
+      </div>
+      <p class="mb-3">{{ note.text }}</p>
+      <p><small>{{ note.date }}</small></p>
+      <button
+        id="deleteBtn"
+        type="button"
+        class="close"
+        onclick="deleteNote('{{ note.id }}')"
+      >
+        Delete <span aria-hidden="true" class="fa fa-trash"></span>
+      </button>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
